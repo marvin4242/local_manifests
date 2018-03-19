@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch="https://github.com/marvin4242" name="marvin4242" />
+  <remote fetch="https://github.com/rn3-los15" name="rn3-los15" />
+  <remote fetch="https://github.com/LineageOS" name="lineage" />
+  <remote fetch="https://github.com/Citrus-CAF" name="citrus" />
+  <remote fetch="https://github.com/Cardinal-AOSP" name="cardinal" />
+  <remove-project name="LineageOS/android_hardware_qcom_display" />
+  <remove-project name="LineageOS/android_hardware_qcom_media" />
+  <remove-project name="LineageOS/android_hardware_qcom_audio" />
+  <project name="android_build_make" path="patches-RR6-kenzo" remote="marvin4242" revision="master" >
+   <copyfile src="make/binary.mk" dest="build/make/core/binary.mk" />
+   <copyfile src="device_kenzo/rr.dependencies" dest="device/xiaomi/kenzo/rr.dependencies" />
+   <copyfile src="device_kenzo/rr.mk" dest="device/xiaomi/kenzo/rr.mk" />
+   <copyfile src="device_msm8956-common/rr.dependencies" dest="device/xiaomi/msm8956-common/rr.dependencies" />
+  </project>
+  <project name="android_device_xiaomi_kenzo" path="device/xiaomi/kenzo" remote="rn3-los15" revision="lineage-15.1" />
+  <project name="android_device_xiaomi_msm8956-common" path="device/xiaomi/msm8956-common" remote="rn3-los15" revision="lineage-15.1" />
+  <project name="android_kernel_xiaomi_msm8956" path="kernel/xiaomi/msm8956" remote="rn3-los15" revision="oreo-mr0-mr1-caf" />
+  <project name="proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="rn3-los15" revision="oreo-mr1" />
+  <project name="hardware_qcom_audio" path="hardware/qcom/audio-caf/msm8952" remote="citrus" revision="o8x-8952" />
+  <project name="hardware_qcom_media" path="hardware/qcom/media-caf/msm8952" remote="citrus" revision="o8x-8952" />
+  <project name="hardware_qcom_display" path="hardware/qcom/display-caf/msm8952" remote="citrus" revision="o8x-8952" />
+  <project name="android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="lineage" revision="lineage-15.1" />
+  <project name="android_external_bson" path="external/bson" remote="lineage" revision="cm-14.1" />
+  <project name="android_device_qcom_common" path="device/qcom/common" remote="lineage" revision="lineage-15.1" />
+</manifest>
